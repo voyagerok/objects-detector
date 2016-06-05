@@ -5,7 +5,7 @@
 
 
 GdkPixbuf*
-find_objects (objects_map *map)
+find_objects (ObjectsMap *map)
 {
   int obj_count;
   IplImage *res_ipl;
@@ -121,7 +121,8 @@ get_convolution (const IplImage *image,
 }
 
 static GQueue*
-get_n_max_coords (const IplImage *image, int n)
+get_n_max_coords (const IplImage *image,
+                  int             n)
 {
   GQueue *coords;
   float max = -1.0;
@@ -163,7 +164,8 @@ get_n_max_coords (const IplImage *image, int n)
 }
 
 static void
-get_lower_right_coords (gpointer data, gpointer user_data)
+get_lower_right_coords (gpointer data,
+                        gpointer user_data)
 {
   CvPoint *current_coords, *best_coords;
 
@@ -176,7 +178,7 @@ get_lower_right_coords (gpointer data, gpointer user_data)
 }
 
 GdkPixbuf*
-find_objects_dft (objects_map *map)
+find_objects_dft (ObjectsMap *map)
 {
   int obj_count;
   IplImage *res_ipl;

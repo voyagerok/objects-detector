@@ -3,11 +3,11 @@
 
 #include <gtk/gtk.h>
 
-void on_activate(GtkApplication *app,
-                 gpointer data);
-void on_startup(GtkApplication *app,
-                gpointer data);
-void on_shutdown(GtkApplication *app,
-                 gpointer data);
+void on_activate (GtkApplication *app,
+                  gpointer        data);
+void on_startup  (GtkApplication *app,
+                  gpointer        data);
+void on_shutdown (GtkApplication *app,
+                  gpointer        data);
 
 #endif // GUI_H

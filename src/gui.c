@@ -4,7 +4,7 @@
 
 static GtkBuilder *builder;
 static const gchar *ui_path = "res/app.glade";
-static objects_map *map;
+static ObjectsMap *map;
 
 #define MENU_ITEM_SET_ACTIVE(builder, item, state);
 

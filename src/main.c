@@ -8,7 +8,7 @@ int main(int argc, char **argv)
   GtkApplication *app;
   int status;
 
-  app = gtk_application_new(app_id, G_APPLICATION_FLAGS_NONE);
+  app = gtk_application_new (app_id, G_APPLICATION_FLAGS_NONE);
   g_signal_connect(app, "startup",
                    G_CALLBACK(on_startup),
                    NULL);

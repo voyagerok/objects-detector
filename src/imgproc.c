@@ -2,8 +2,8 @@
 
 #define THICKNESS 2
 
-IplImage *
-pixbuf2ipl(const GdkPixbuf *image)
+IplImage*
+pixbuf2ipl (const GdkPixbuf *image)
 {
   IplImage *res_image;
   int width, height;
@@ -40,8 +40,8 @@ pixbuf2ipl(const GdkPixbuf *image)
   return res_image;
 }
 
-GdkPixbuf *
-ipl2pixbuf(const IplImage *image)
+GdkPixbuf*
+ipl2pixbuf (const IplImage *image)
 {
   uchar *imageData;
   guchar *pixbufData;
@@ -198,7 +198,9 @@ ipl2pixbuf(const IplImage *image)
 }
 
 IplImage*
-get_object (int type, int width, int height)
+get_object (int type,
+            int width,
+            int height)
 {
   IplImage *image;
 
@@ -227,7 +229,9 @@ get_object (int type, int width, int height)
 }
 
 void
-place_image(IplImage *dst, IplImage *src, CvRect location)
+place_image (IplImage *dst,
+             IplImage *src,
+             CvRect    location)
 {
   int dst_width, dst_height;
 
@@ -277,13 +281,18 @@ place_rectangle_with_position(IplImage *dst, CvPoint *point,
   down_right.x = rec_width - 1;
   down_right.y = rec_height - 1;
 
-  color = cvScalar(0, 0, 255, 0);
+  color = cvScalar (0,
+                    0,
+                    255,
+                    0);
 
   cvSetImageROI(dst, roi);
-  cvRectangle(dst,
-              up_left,
-              down_right,
-              color,
-              3, 8, 0);
+  cvRectangle (dst,
+               up_left,
+               down_right,
+               color,
+               3,
+               8,
+               0);
   cvResetImageROI(dst);
 }

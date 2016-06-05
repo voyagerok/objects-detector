@@ -7,16 +7,16 @@
 #define MAP_HEIGHT 600
 
 void
-init_objects_map(objects_map **map)
+init_objects_map(ObjectsMap **map)
 {
-  *map = malloc(sizeof(objects_map));
+  *map = malloc(sizeof(ObjectsMap));
   (*map)->objects = NULL;
   (*map)->map = NULL;
   (*map)->n_of_objects = 0;
 }
 
 void
-release_objects_map(objects_map **map)
+release_objects_map(ObjectsMap **map)
 {
   g_assert(*map != NULL);
 
@@ -34,7 +34,7 @@ release_objects_map(objects_map **map)
 }
 
 void
-generate_new_objects(objects_map *map)
+generate_new_objects(ObjectsMap *map)
 {
   int size, object_type;
   int width, height;
@@ -74,7 +74,7 @@ generate_new_objects(objects_map *map)
 }
 
 void
-generate_new_map(objects_map *map)
+generate_new_map(ObjectsMap *map)
 {
   g_assert (map->n_of_objects != 0 && map->objects != NULL);
 
@@ -116,7 +116,7 @@ generate_new_map(objects_map *map)
 }
 
 GdkPixbuf*
-get_map_as_pixbuf(objects_map *map)
+get_map_as_pixbuf(ObjectsMap *map)
 {
   GdkPixbuf *res = NULL;
 
