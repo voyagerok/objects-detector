@@ -21,9 +21,9 @@
 #define SEVEN 4
 #define THREE 5
 
-IplImage  *pixbuf2ipl                    (const GdkPixbuf *image);
-GdkPixbuf *ipl2pixbuf                    (const IplImage  *image);
-IplImage  *get_object                    (int              type,
+IplImage*  pixbuf2ipl                    (const GdkPixbuf *image);
+GdkPixbuf* ipl2pixbuf                    (const IplImage  *image);
+IplImage*  get_object                    (int              type,
                                           int              width,
                                           int              height);
 void       place_image                   (IplImage        *dst,
