@@ -22,8 +22,8 @@ find_objects (ObjectsMap *map)
   map_width = map->map->width;
   map_height = map->map->height;
   res_ipl = cvCreateImage(cvGetSize(map->map),
-                      map->map->depth,
-                      N_CHANNELS_RGB);
+                          map->map->depth,
+                          N_CHANNELS_RGB);
   cvCvtColor(map->map, res_ipl, CV_GRAY2BGR);
 
   obj_count = map->n_of_objects;
@@ -63,33 +63,33 @@ get_convolution (const IplImage *image,
 
   res = cvCreateImage(cvSize(image->width,
                              image->height),
-                                         IPL_DEPTH_32F,
-                                         N_CHANNELS_GRAY);
+                      IPL_DEPTH_32F,
+                      N_CHANNELS_GRAY);
   reversed_image = cvCreateImage(cvGetSize(image),
-                              IPL_DEPTH_8U,
-                              N_CHANNELS_GRAY);
+                                 IPL_DEPTH_8U,
+                                 N_CHANNELS_GRAY);
   reversed_filter = cvCreateImage(cvGetSize(filter),
-                              IPL_DEPTH_8U,
-                              N_CHANNELS_GRAY);
+                                  IPL_DEPTH_8U,
+                                  N_CHANNELS_GRAY);
 
   cvNot(image, reversed_image);
   cvNot(filter, reversed_filter);
 
   dft_image = cvCreateImage(dft_size,
-                                  IPL_DEPTH_32F,
-                                  N_CHANNELS_GRAY);
+                            IPL_DEPTH_32F,
+                            N_CHANNELS_GRAY);
   cvSet(dft_image, cvScalar(0, 0, 0, 0), NULL);
   dft_filter = cvCreateImage(dft_size,
-                                  IPL_DEPTH_32F,
-                                  N_CHANNELS_GRAY);
+                             IPL_DEPTH_32F,
+                             N_CHANNELS_GRAY);
   cvSet(dft_filter, cvScalar(0, 0, 0, 0), NULL);
 
   cvSetImageROI(dft_image, cvRect(0, 0,
-                                        reversed_image->width,
-                                        reversed_image->height));
+                                  reversed_image->width,
+                                  reversed_image->height));
   cvSetImageROI(dft_filter, cvRect(0, 0,
-                                        reversed_filter->width,
-                                        reversed_filter->height));
+                                   reversed_filter->width,
+                                   reversed_filter->height));
   double scaling_factor = 1.0/255;
   cvConvertScale(reversed_image, dft_image, scaling_factor, 0);
   cvConvertScale(reversed_filter, dft_filter, scaling_factor, 0);
@@ -195,8 +195,8 @@ find_objects_dft (ObjectsMap *map)
   map_width = map->map->width;
   map_height = map->map->height;
   res_ipl = cvCreateImage(cvGetSize(map->map),
-                      map->map->depth,
-                      N_CHANNELS_RGB);
+                          map->map->depth,
+                          N_CHANNELS_RGB);
   cvCvtColor(map->map, res_ipl, CV_GRAY2BGR);
 
   obj_count = map->n_of_objects;

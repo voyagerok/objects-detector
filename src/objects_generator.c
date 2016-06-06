@@ -7,7 +7,7 @@
 #define MAP_HEIGHT 600
 
 void
-init_objects_map(ObjectsMap **map)
+init_objects_map (ObjectsMap **map)
 {
   *map = malloc(sizeof(ObjectsMap));
   (*map)->objects = NULL;
@@ -34,7 +34,7 @@ release_objects_map(ObjectsMap **map)
 }
 
 void
-generate_new_objects(ObjectsMap *map)
+generate_new_objects (ObjectsMap *map)
 {
   int size, object_type;
   int width, height;
@@ -74,7 +74,7 @@ generate_new_objects(ObjectsMap *map)
 }
 
 void
-generate_new_map(ObjectsMap *map)
+generate_new_map (ObjectsMap *map)
 {
   g_assert (map->n_of_objects != 0 && map->objects != NULL);
 

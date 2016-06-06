@@ -244,9 +244,11 @@ place_image (IplImage *dst,
 }
 
 void
-place_rectangle_with_position(IplImage *dst, CvPoint *point,
-                int rec_width, int rec_height,
-                            int position)
+place_rectangle_with_position(IplImage *dst,
+                              CvPoint  *point,
+                              int       rec_width,
+                              int       rec_height,
+                              int       position)
 {
   CvPoint up_left;
   CvPoint down_right;
@@ -281,18 +283,14 @@ place_rectangle_with_position(IplImage *dst, CvPoint *point,
   down_right.x = rec_width - 1;
   down_right.y = rec_height - 1;
 
-  color = cvScalar (0,
-                    0,
-                    255,
-                    0);
+  color = cvScalar (0, 0,
+                    255, 0);
 
-  cvSetImageROI(dst, roi);
+  cvSetImageROI (dst, roi);
   cvRectangle (dst,
                up_left,
                down_right,
                color,
-               3,
-               8,
-               0);
+               3, 8, 0);
   cvResetImageROI(dst);
 }

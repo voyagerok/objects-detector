@@ -58,7 +58,7 @@ on_find_objects(GtkButton *button,
       map->map != NULL);
 
   image = GTK_IMAGE(gtk_builder_get_object(builder, "image"));
-//  pbuf = find_objects (map);
+  //  pbuf = find_objects (map);
   pbuf = find_objects_dft(map);
   gtk_image_set_from_pixbuf (image, pbuf);
 

@@ -22,17 +22,17 @@
 #define THREE 5
 
 IplImage  *pixbuf2ipl                    (const GdkPixbuf *image);
-GdkPixbuf *ipl2pixbuf                    (const IplImage *image);
-IplImage  *get_object                    (int             type,
-                                          int             width,
-                                          int             height);
-void       place_image                   (IplImage       *dst,
-                                          IplImage       *src,
-                                          CvRect          location);
-void       place_rectangle_with_position (IplImage       *dst,
-                                          CvPoint        *center,
-                                          int             rec_width,
-                                          int             rec_height,
-                                          int             position);
+GdkPixbuf *ipl2pixbuf                    (const IplImage  *image);
+IplImage  *get_object                    (int              type,
+                                          int              width,
+                                          int              height);
+void       place_image                   (IplImage        *dst,
+                                          IplImage        *src,
+                                          CvRect           location);
+void       place_rectangle_with_position (IplImage        *dst,
+                                          CvPoint         *center,
+                                          int              rec_width,
+                                          int              rec_height,
+                                          int              position);
 
 #endif // IMGPROC_H
